@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dive into Code Logic: A Nexus of Conditionals and Arrays</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <style>
+    /* Custom styles for menu */
+    nav {
+  background-color: #c9b6bc; /* Darker blue background color */
+  padding: 10px; /* Reduced padding */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+
+  transition: color 0.3s ease;
+
+
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Yellow hover color */
+}
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+    }
+   .logout-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6347; /* Coral color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #ff473e; /* Darker shade on hover */
+}
+/* Style for back button */
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px; /* Adjust left position */
+      background-color: #007bff; /* Blue color */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+    /* Style for date and time */
+    #datetime {
+      position: fixed;
+      top: 20px; /* Adjust top position */
+      left: 20px; /* Adjust left position */
+      color: lightpink;
+    }
+    /* Style for date and time */
+    #datetime {
+      position: fixed;
+      top: 20px; /* Adjust top position */
+      left: 20px; /* Adjust left position */
+      color: lightpink;
+    }
+    button {
+  background-color: purple;
+  color: #fff;
+  border: 1px purple solid;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dive into Code Logic: A Nexus of Conditionals and Arrays</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="textbooks.html">Textbooks</a></li> 
+      <li><a href="games.html">Projects</a></li> 
+      <li><a href="team.html">Team</a></li> 
+    </ul>
+  </nav>
+  <main>
+    <section id="home">
+      <h2>Embark on a Journey of Discovery with Our Learning Platform!</h2>
+      <br></br>
+      <p>Step into a realm of endless possibilities where interactive modules and stimulating challenges await to sharpen your mastery of conditional statements and arrays. 
+        <br>Explore the dynamic world of programming with hands-on activities designed to ignite your curiosity and propel your skills to new heights. </br>
+      <br>Join us on this exhilarating journey of discovery and empowerment as you unlock the secrets of efficient decision-making and unleash the full potential of arrays.</br>
+      <br> Are you ready to embark on an adventure of learning and growth? Let's dive in together!
+    </br></p>
+    </section>
+    <section id="levels">
+      <!-- Levels will be dynamically generated -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+   
+  
+   <button class="logout-button" onclick="location.href='logout.html'">Feedback</button> <!-- Add this button -->
+  <div id="datetime"></div> <!-- Display date and time -->
+  <script src="script.js">
+    function logout() {
+      // Redirect to the logout page
+      window.location.href = "logout.html";
+  </script> <!-- Link to external JavaScript file -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+       const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</body>
+</html>

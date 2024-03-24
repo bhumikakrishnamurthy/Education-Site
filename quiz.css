@@ -1,0 +1,92 @@
+body {
+    background-image: url('quiz.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Added some space around the container */
+    background-color: #fff; /* White background */
+    border-radius: 20px; /* Increased border radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow */
+    padding: 30px;
+}
+
+header {
+    background-color: #dc3545; /* Changed header background color to red */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px 0; /* Increased padding */
+    border-radius: 20px 20px 0 0; /* Increased border radius */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px; /* Increased font size */
+}
+
+main {
+    padding: 20px 0; /* Increased padding */
+}
+
+h2 {
+    color: #333; /* Dark text color */
+    font-size: 24px; /* Increased font size */
+    margin-bottom: 15px; /* Added margin bottom */
+}
+
+input[type="button"] {
+    background-color: #007bff; /* Blue button background */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 12px 24px; /* Increased padding */
+    cursor: pointer;
+    border-radius: 10px; /* Rounded button */
+    font-size: 18px; /* Increased font size */
+    transition: background-color 0.3s; /* Smooth transition */
+    display: block; /* Make buttons block elements */
+    margin: 15px auto; /* Center buttons horizontally */
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#score {
+    margin-top: 30px; /* Adjusted margin */
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+    font-size: 20px; /* Increased font size */
+}
+
+/* Style for date and time */
+    #datetime {
+      position: fixed;
+      top: 20px; /* Adjust top position */
+      left: 20px; /* Adjust left position */
+      color: lightpink;
+    }
+
+    /* Style for back button */
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px; /* Adjust left position */
+      background-color: #007bff; /* Blue color */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+
+    

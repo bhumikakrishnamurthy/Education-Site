@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <title>Resource Hub</title>
+  <style>
+    
+
+header {
+  background-color: #89cff0; 
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  -moz-box-shadow:2px 2px 2px 2px #80002b; 
+  -webkit-box-shadow:2px 2px 2px 2px #80002b; 
+  box-shadow:2px 2px 2px 2px #80002b ;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+
+}
+nav {
+  background-color: #c9b6bc; /* Darker blue background color */
+  padding: 10px; /* Reduced padding */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+
+  transition: color 0.3s ease;
+
+
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Yellow hover color */
+}
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  white-space: nowrap;
+  overflow-x: auto;
+  background: transparent;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(33.33% - 20px); /* Adjusted width */
+  background-color: #fce4ec; /* Very light pink card background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hover animation */
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #ff80ab; /* Light pink heading color */
+}
+
+.card p {
+  margin-bottom: 15px;
+}
+
+.card a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #ff80ab; /* Light pink hover color */
+}
+
+.logout-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6347; /* Coral color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #ff473e; /* Darker shade on hover */
+}
+/* Style for date and time */
+    #datetime {
+      position: fixed;
+      top: 20px; /* Adjust top position */
+      left: 20px; /* Adjust left position */
+      color: lightpink;
+    }
+
+
+
+
+
+    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  width: calc(33.33% - 20px); /* Adjusted width */
+  background-color:darkcyan; /* Very light pink card background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+  margin-top: 0;
+  color: #ff80ab; /* Light pink heading color */
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+button {
+  background-color: purple;
+  color: #fff;
+  border: 1px purple solid;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dive into Code Logic: </h1>
+   <h1> A Nexus of Conditionals and Arrays</h1> 
+  </header>
+  <nav>
+    <ul>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="textbooks.html">Textbooks</a></li>
+      <li><a href="games.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li> 
+    </ul>
+  </nav>
+  <div class="container">
+        
+     <div class="panel active">
+      <h2 style="color:#ff80ab">Start your journey into C programming with W3Schools. </h2>
+      <p>Whether you're a beginner or looking to enhance your skills, W3Schools provides comprehensive tutorials and examples to help you master C programming</p>
+      <button class="ripple" onclick="location.href='https://www.w3schools.com/c/c_arrays.php'">Visit Resource</button> <!-- Add thisbutton --> 
+    </div>
+
+    <div class="panel">
+      <h2 style="color:#ff80ab">Explore Endless Knowledge: Dive into Our Blogosphere</h2>
+      <p>A treasure trove experience of C programming insights, tips, and tutorials crafted to fuel your coding journey. From beginner basics to advanced techniques, embark on a learning adventure tailored just for you. Start coding, start exploring—your C programming odyssey awaits!</p>
+      <button class="ripple" onclick="location.href='blogs.html'">Visit Resource</button> <!-- Add thisbutton --> 
+    </div>
+
+    <div class="panel">
+      <h2 style="color:#ff80ab">Crack the Code: Unraveling Coding Challenges! </h2>
+      <p>Delve into our comprehensive collection of coding questions designed to sharpen your problem-solving skills. From algorithm puzzles to real-world scenarios, challenge yourself with diverse coding problems and elevate your programming prowess. Let the coding adventures begin</p>
+      <button class="ripple" onclick="location.href='coding.html'">Visit Resource</button> <!-- Add thisbutton --> 
+    </div>
+
+    <div class="panel">
+      <h2 style="color:#ff80ab">Quiz Quest</h2>
+      <p>Explore Our MCQ Marvels! Embark on a journey of knowledge with our diverse collection of multiple-choice questions. From fundamental concepts to advanced topics, test your understanding and expand your expertise. Dive into our quiz pool and unlock the treasure trove of learning!</p>
+      <button class="ripple" onclick="location.href='mcqbank.html'">Visit Resource</button> <!-- Add thisbutton --> 
+      
+    </div>
+
+    
+  </div>
+  <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+  <div id="datetime"></div> <!-- Display date and time -->
+  
+</body>
+
+  <button class="logout-button" onclick="location.href='logout.html'">Feedback</button> <!-- Add thisbutton -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+
+    const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</html>

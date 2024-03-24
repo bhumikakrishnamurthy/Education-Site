@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mcqbank.css"> <!-- Link to external CSS file -->
+
+  <title>Resource Hub</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dive into Code Logic: A Nexus of Conditionals and Arrays</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="textbooks.html">Textbooks</a></li>
+      <li><a href="games.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li> 
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <h2>Brain Benders: Dive into the Quiz Zone</h2>
+      <p>
+          Prepare to bend your brain as you dive into the ultimate Quiz Zone! Get ready to challenge your mind with an array of brain-teasing questions covering topics like arrays and conditional statements. Test your mental agility as you navigate through complex coding scenarios and unravel the mysteries of logic.  Let's see if you have what it takes to conquer the Brain Benders Quiz Zone!
+      </p>
+      
+<button class="ripple" onclick="location.href='https://www.geeksforgeeks.org/top-mcqs-on-array-dsa-quiz-for-beginners/'">Are you up for the challenge?</button> 
+    </div>
+
+    <div class="card">
+      <h2>Quizopia: Where Curiosity Meets Challenge</h2>
+      <p>
+          Welcome to Quizopia, where your curiosity collides with challenge! Get ready to test your knowledge and sharpen your skills with questions on arrays and conditional statements. From understanding the intricacies of array indexing to mastering the art of decision-making in code, Quizopia will take you on an engaging journey through the fundamentals of programming. Can you conquer the complexities of arrays and sail through the maze of conditional statements? 
+      </p>
+      
+      <button class="ripple" onclick="location.href='https://quizlet.com/554883329/exploring-arrays-loops-and-conditional-statements-flash-cards/'">Join us and find out!</button> 
+    </div>
+
+    <div class="card">
+      <h2>Mind Meld: Explore the Ultimate Quiz Experience!</h2>
+      <p>Embark on an exhilarating journey through the ultimate quiz experience in Mind Meld! Delve deep into the realms of arrays and conditional statements as you test your knowledge and problem-solving skills. From unraveling the mysteries of data organization to mastering the art of decision-making in code, Mind Meld offers an immersive adventure for curious minds.</p>
+      <button class="ripple" onclick="location.href='https://www.codequizzes.com/javascript/beginner/operators-conditionals-loops-arrays'">Get ready for an adventure like no other!</button> 
+    </div>
+    
+    <div class="card">
+      <h2>Trivia Titans: Battle for Brain Supremacy!!</h2>
+      <p>Step into the arena, where only the sharpest minds survive! In Trivia Titans, challenge your intellect against worthy adversaries across various topics. Claim your spot as the ultimate Trivia Titan by outwitting your opponents and conquering the battle for brain supremacy! </p>
+      <button class="ripple" onclick="location.href='https://testbook.com/objective-questions/mcq-on-loops-array--600139f9b501c47d0a0c67cf'">Let the battle begin!</button> 
+    </div>
+
+  </div>
+  <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+  
+  <button class="back-button" onclick="location.href='links.html'">Back</button>
+   <button class="logout-button" onclick="location.href='logout.html'">Feedback</button> <!-- Add this button -->
+  <div id="datetime"></div> <!-- Display date and time -->
+  <script src="script.js">
+    function logout() {
+      // Redirect to the logout page
+      window.location.href = "logout.html";
+  </script> <!-- Link to external JavaScript file -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+       const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blogs.css"> <!-- Link to external CSS file -->
+
+  <title>Resource Hub</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dive into Code Logic: A Nexus of Conditionals and Arrays</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="textbooks.html">Textbooks</a></li>
+      <li><a href="games.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li> 
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <h2>   The Coding Corner: Exploring the Versatility of Arrays</h2>
+      <p>
+          Unlock the potential of arrays with this comprehensive article that delves into their various applications in everyday life and problem-solving scenarios. From managing data efficiently to implementing algorithms, arrays play a pivotal role in the world of programming and beyond.
+      </p>
+      <button class="ripple" onclick="location.href='https://www.prepbytes.com/blog/array-articles/'">Explore Now</button> 
+    </div>
+
+    <div class="card">
+      <h2> Syntax Symphony: Exploring a Melody of Programming Syntax</h2>
+      <p>
+          Embark on a journey through various programming syntaxes with this captivating resource. From fundamental constructs to advanced techniques, delve into the intricacies of syntax and discover the building blocks of code.
+      </p>
+      
+       <button class="ripple" onclick="location.href='https://lo.unisa.edu.au/mod/book/tool/print/index.php?id=466679'">Explore Now</button> 
+    </div>
+
+    <div class="card">
+      <h2> Conditional Chronicles: Unraveling the Art of Decision-Making in Code</h2>
+      <p>Embark on a journey through the world of conditional statements, looping, and arrays. Explore the intricacies of decision-making in code and master the art of crafting efficient and logical algorithms.</p>
+       <button class="ripple" onclick="location.href='https://www.scribd.com/document/483093910/Unit-3-Conditional-Statements-Looping-and-Arrays'">Explore Now</button> 
+    </div>
+    
+    <div class="card">
+      <h2> Conditional Adventures: Journey into the World of Flowcharts and Methodology</h2>
+      <p>Embark on an exciting exploration of flowcharts and the methodology behind conditional statements. Discover the principles of logical decision-making and enhance your programming skills.</p>
+      <a href="" target="_blank"></a>
+      <button class="ripple" onclick="location.href='https://physics.nyu.edu/pine/pymanual/html/chap6/chap6_loopsconds.html'">Explore Now</button> 
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+  
+  <button class="back-button" onclick="location.href='links.html'">Back</button>
+   <button class="logout-button" onclick="location.href='logout.html'">Feedback</button> <!-- Add this button -->
+  <div id="datetime"></div> <!-- Display date and time -->
+  <script src="script.js">
+    function logout() {
+      // Redirect to the logout page
+      window.location.href = "logout.html";
+  </script> <!-- Link to external JavaScript file -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+       const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</body>
+</html>

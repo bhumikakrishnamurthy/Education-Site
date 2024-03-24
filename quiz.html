@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Calls Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Conditionals and arrays Quiz</h1>
+        </header>
+        <main>
+            <form id="quizForm">
+                <h2>Question 1: What is the output of the given below program? if ((1 + 3) == 7): print("Hello") else: print("Know Program")</h2>
+                <input type="radio" name="q1" value="incorrect"> Hello<br>
+                <input type="radio" name="q1" value="incorrect">Error<br>
+                <input type="radio" name="q1" value="correct">Know Program<br>
+<input type="radio" name="q1" value="incorrect">Compiled Successfully, No Output.<br>
+                <br>
+                <h2>Question 2:Which of following isnot a decision-making statement?</h2>
+                <input type="radio" name="q2" value="incorrect">if-elif statement<br>
+                <input type="radio" name="q2" value="correct">for statement<br>
+                <input type="radio" name="q2" value="incorrect">if statement<br>
+                <br>
+                <h2>Question 3:What are the elements present in the array of the following C code?int array[5] = {5};</h2>
+                <input type="radio" name="q3" value="correct">5, 0, 0, 0, 0<br>
+                <input type="radio" name="q3" value="incorrect">5, 5, 5, 5, 5<br>
+<input type="radio" name="q3" value="incorrect">5, (garbage), (garbage), (garbage), (garbage)<br>
+                
+                <br>
+                <h2>Question 4:Comment on an array of the void data type. </h2>
+                <input type="radio" name="q4" value="incorrect"> It can store any data-type<br>
+                <input type="radio" name="q4" value="incorrect"> It only stores element of similar data type to first element
+<br>
+                <input type="radio" name="q4" value="incorrect">It acquires the data type with the highest precision in it
+<br>
+<input type="radio" name="q4" value="correct">You cannot have an array of void data type
+<br>
+                <br>
+            
+                <h2>Question 5: What is the highest index for an array with 10 elements in C
+
+</h2>
+                <input type="radio" name="q6" value="correct">9<br>
+                <input type="radio" name="q6" value="incorrect">5<br>
+                <input type="radio" name="q6" value="incorrect">10<br>
+<input type="radio" name="q6" value="incorrect">11<br>
+                <br>
+                
+                <br>
+                <input type="button" value="Submit" onclick="checkAnswers()">
+            </form>
+            <div id="score"></div>
+        </main>
+        <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+    </div>
+    <button class="back-button" onclick="location.href='links.html'">Back</button>
+     <div id="datetime"></div> <!-- Display date and time -->
+  <script src="script.js">
+    function logout() {
+      // Redirect to the logout page
+      window.location.href = "logout.html";
+  </script> <!-- Link to external JavaScript file -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+       const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</body>
+</html>

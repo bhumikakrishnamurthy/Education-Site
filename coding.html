@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="coding.css"> <!-- Link to external CSS file -->
+
+  <title>Resource Hub</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dive into Code Logic: A Nexus of Conditionals and Arrays</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="textbooks.html">Textbooks</a></li>
+      <li><a href="games.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li> 
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <h2>GeeksforGeeks: Your Gateway to Programming Excellence</h2>
+      <p>
+        Explore the fundamentals of decision making in Python and elevate your coding skills with this comprehensive guide.
+      </p>
+      <button class="ripple" onclick="location.href='https://www.geeksforgeeks.org/python-if-else/?ref=gcse'">Learn PYTHON</button>
+      <br></br>
+      <p>Dive into the world of decision-making in C programming languages. Master the art of logical thinking and problem-solving.</p>
+      <button class="ripple" onclick="location.href='https://www.geeksforgeeks.org/decision-making-c-cpp/?ref=gcse'">Learn C</button>
+      <br></br>
+      <p>Discover the power of decision-making in C#. Unravel the complexities of else-if ladder, nested switch statements, and more.</p>
+      <button class="ripple" onclick="location.href='https://www.geeksforgeeks.org/c-sharp-decision-making-else-else-ladder-nested-switch-nested-switch/?ref=gcse'">Learn</button>
+    </div>
+
+    <div class="card">
+      <h2>Depths of Arrays: Unraveling the Mysteries of Data Structures</h2>
+      <p>Embark on a journey into the depths of arrays, the foundational data structure in programming. Explore their intricacies, applications, and unleash their power in solving complex problems.
+      </p>
+      <button class="ripple" onclick="location.href='https://leetcode.com/explore/learn/card/array-and-string/'">Learn More</button>
+    </div>
+
+    <div class="card">
+      <h2>Python - A Game of Loops and Conditional Statements</h2>
+      <p> Dive into the world of Python, where loops and conditional statements shape the rules of the game. Explore how these fundamental concepts intertwine to solve intriguing problems and pave the way for efficient coding.</p>
+      <button class="ripple" onclick="location.href='https://leetcode.com/problems/time-needed-to-buy-tickets/solutions/2004771/Python-A-Game-of-Loops-and-Conditional-Statements/'">LET'S START</button> 
+    </div>
+    
+    <div class="card">
+      <h2>Unlock Your Coding Potential: Dive Into Programming Questions with Solutions</h2>
+      <p> Explore a treasure trove of programming questions accompanied by detailed solutions, designed to sharpen your skills and expand your coding horizons.</p>
+      <button class="ripple" onclick="location.href='https://www.w3resource.com/python-exercises/python-conditional-statements-and-loop-exercises.php'">Start Learning</button> 
+    </div>
+
+    <div class="card">
+      <h2>Master the Basics: The Foundation of Programming Theory</h2>
+      <p> Embark on a journey through the fundamental principles of programming theory, laying a solid groundwork for your coding adventures.</p>
+      <button class="ripple" onclick="location.href='https://codeyourfuture.github.io/syllabus-master/js-core-1/week-2/lesson.html'">Let's Begin</button> 
+    </div>
+
+  </div>
+  <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+  
+  <button class="back-button" onclick="location.href='links.html'">Back</button>
+   <button class="logout-button" onclick="location.href='logout.html'">Feedback</button> <!-- Add this button -->
+  <div id="datetime"></div> <!-- Display date and time -->
+  <script src="script.js">
+    function logout() {
+      // Redirect to the logout page
+      window.location.href = "logout.html";
+  </script> <!-- Link to external JavaScript file -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+       const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</body>
+</html>

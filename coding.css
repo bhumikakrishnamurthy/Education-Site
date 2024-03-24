@@ -1,0 +1,256 @@
+/* Reset default margin and padding 
+body {
+  background-image: url('blogs.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply styles to header 
+header {
+  background-color: #2c3e50; /* Dark blue background color 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}*/
+header {
+  background-color:#22223b; 
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  -moz-box-shadow:2px 2px 2px 2px #9a8c98; 
+  -webkit-box-shadow:2px 2px 2px 2px #9a8c98; 
+  box-shadow:2px 2px 2px 2px #9a8c98 ;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+
+}
+/* Apply styles to navigation menu */
+nav {
+  background-color:#c9b6bc ; /* Darker blue background color */
+  padding: 10px; /* Reduced padding */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Yellow hover color */
+}
+
+/* Apply styles to main content sections */
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  white-space: nowrap;
+  overflow-x: auto;
+  background: transparent;
+}
+
+section {
+  margin-bottom: 40px;
+  background-color:#2ca2b2; /* Light blue pastel background color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+
+section:hover {
+  transform: translateY(-5px);
+   background-color:#2ca2b2;
+}
+
+/* Apply styles to footer */
+footer {
+  background-color: #2c3e50; /* Dark blue background color */
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Pathway design */
+.level::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 100%;
+  width: 50px;
+  height: 2px;
+   background-color: #2c3e50; /* Darker blue */
+  transform: translateY(-1px);
+  z-index: -1;
+}
+
+.level:last-child::after {
+  display: none;
+}
+
+/* Additional Styling */
+header h1 {
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+ body {
+  background-image: url('coding.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+    
+
+    
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      width: calc(25% - 20px);
+      background-color: #9a8c98;
+      border-radius: 20%; /* Circular shape */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* Hover animation */
+      color:#22223b;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .card p {
+      margin-bottom: 5px;
+    }
+
+    .card a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .card a:hover {
+      color:#22223b;
+    }
+
+
+    .logout-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6347; /* Coral color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #ff473e; /* Darker shade on hover */
+}
+/* Style for back button */
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px; /* Adjust left position */
+      background-color: #007bff; /* Blue color */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+    /* Style for date and time */
+    #datetime {
+      position: fixed;
+      top: 20px; /* Adjust top position */
+      left: 20px; /* Adjust left position */
+      color: lightpink;
+    }
+    /* Style for date and time */
+    #datetime {
+      position: fixed;
+      top: 20px; /* Adjust top position */
+      left: 20px; /* Adjust left position */
+      color: lightpink;
+    }
+button {
+  background-color: purple;
+  color: #fff;
+  border: 1px purple solid;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
