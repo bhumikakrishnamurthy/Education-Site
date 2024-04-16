@@ -66,7 +66,19 @@
       // Redirect to the logout page
       window.location.href = "logout.html";
   </script> <!-- Link to external JavaScript file -->
-
+<script>function checkAnswers() {
+            var score = 0;
+            var form = document.getElementById("quizForm");
+            var inputs = form.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked && inputs[i].value === "correct") {
+                    score++;
+                }
+            }
+            var scoreDisplay = document.getElementById("score");
+            scoreDisplay.innerHTML = "Your score: " + score + "/5";
+        }
+    </script>
   <script>
     // Function to display real-time date and time
     function displayDateTime() {
