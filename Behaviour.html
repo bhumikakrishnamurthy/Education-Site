@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blogs.css"> <!-- Link to external CSS file -->
+
+  <title>Resource Hub</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dive into Code Logic: A Nexus of Conditionals and Arrays</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="textbooks.html">Textbooks</a></li>
+      <li><a href="games.html">Projects</a></li>
+      <li><a href="Interview.html">Interview</a></li>
+      <li><a href="team.html">Team</a></li> 
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <h2 style="color:darkred">Unveiling Interview Tactics: </h2>
+    <p style="color:darkblue">"Your Guide to Coding Triumphs" is your comprehensive resource for conquering coding interviews. Discover proven strategies, tips, and tricks to navigate technical questions with confidence, showcase your skills effectively, and secure your dream job in the tech industry.</p>
+    <button class="ripple" onclick="location.href='https://www.themuse.com/advice/behavioral-interview-questions-answers-examples'">Explore</button>
+    </div>
+
+    <div class="card">
+      <h2 style="color:darkred">Showcasing Your Professionalism: </h2>
+    <p style="color:darkblue">Navigating behavioral interviews is about showcasing your professionalism through past experiences. Learn effective strategies to highlight your teamwork, conflict resolution, and adaptability skills. Master the art of answering behavioral questions to leave a lasting impression.</p>
+    <button class="ripple" onclick="location.href='https://business.linkedin.com/talent-solutions/resources/interviewing-talent/behavioral-interview-questions-important-soft-skills'">Explore</button>
+    </div>
+
+    
+    
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Learning Platform</p>
+  </footer>
+  
+  <button class="back-button" onclick="location.href='Interview.html'">Back</button>
+   <button class="logout-button" onclick="location.href='logout.html'">Feedback</button> <!-- Add this button -->
+  <div id="datetime"></div> <!-- Display date and time -->
+  <script src="script.js">
+    function logout() {
+      // Redirect to the logout page
+      window.location.href = "logout.html";
+  </script> <!-- Link to external JavaScript file -->
+
+  <script>
+    // Function to display real-time date and time
+    function displayDateTime() {
+      const datetimeElement = document.getElementById('datetime');
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      datetimeElement.textContent = formattedDateTime;
+    }
+    
+    // Call the function initially and then update every second
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+       const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+const buttons = document.querySelectorAll('.ripple')
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.pageX
+        const y = e.pageY
+
+        const buttonTop = e.target.offsetTop
+        const buttonLeft = e.target.offsetLeft
+
+        const xInside = x - buttonLeft
+        const yInside = y - buttonTop
+
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
+    })
+})
+  </script>
+</body>
+</html>
